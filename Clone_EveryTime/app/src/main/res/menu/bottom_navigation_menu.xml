@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!-- 하단 탭 아이템 설정 -->
+
+    <item
+        android:id="@+id/bottom_navigation_item_home"
+        app:showAsAction="always"
+        android:enabled="true"
+        android:title="홈"
+        android:icon="@drawable/ic_bottom_navigation_home" />
+
+    <item
+        android:id="@+id/bottom_navigation_item_timetable"
+        app:showAsAction="always"
+        android:enabled="true"
+        android:title="시간표"
+        android:icon="@drawable/ic_bottom_navigation_table"/>
+
+    <item
+        android:id="@+id/bottom_navigation_item_board"
+        app:showAsAction="always"
+        android:enabled="true"
+        android:title="게시판"
+        android:icon="@drawable/ic_bottom_navigation_board"/>
+
+    <item
+        android:id="@+id/bottom_navigation_item_notify"
+        app:showAsAction="always"
+        android:enabled="true"
+        android:title="알림"
+        android:icon="@drawable/ic_bottom_navigation_bell"/>
+
+    <item
+        android:id="@+id/bottom_navigation_item_campuspick"
+        app:showAsAction="always"
+        android:enabled="true"
+        android:title="캠퍼스픽"
+        android:icon="@drawable/ic_bottom_navigation_location"/>
+
+</menu>
