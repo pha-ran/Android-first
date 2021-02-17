@@ -2,16 +2,15 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
+    <!--홈 툴바 아이템 설정-->
+
     <item android:id="@+id/toolbar_home_search"
         android:icon="@drawable/ic_home_toolbar_magnifier"
-        android:iconTint="@color/white"
         android:title="검색"
         app:showAsAction="always"/>
 
     <item android:id="@+id/toolbar_home_myprofile"
         android:icon="@drawable/ic_home_toolbar_person"
-        android:iconTint="@color/white"
         android:title="내정보"
         app:showAsAction="always"/>
-
 </menu>

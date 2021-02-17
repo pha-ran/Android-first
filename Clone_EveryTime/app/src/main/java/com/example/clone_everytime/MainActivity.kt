@@ -2,7 +2,9 @@ package com.example.clone_everytime
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Menu
 import androidx.appcompat.widget.Toolbar
+import androidx.fragment.app.Fragment
 
 class MainActivity : AppCompatActivity() {
 
@@ -13,7 +15,11 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         homeFragment = HomeFragment()
-        supportFragmentManager.beginTransaction().replace(R.id.main_activity_framelayout, homeFragment).commit()
+        fragmentChange(homeFragment)
+    }
+
+    fun fragmentChange(fragment : Fragment) {
+        supportFragmentManager.beginTransaction().replace(R.id.main_activity_framelayout, fragment).commit()
     }
 
     fun toolBarChange(toolbar : Toolbar?) {

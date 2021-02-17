@@ -8,15 +8,17 @@
     android:orientation="vertical"
     tools:context=".HomeFragment">
 
-
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar_home"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:background="@color/black"
         android:minHeight="?attr/actionBarSize"
-        android:theme="?attr/actionBarTheme" />
+        android:theme="?attr/actionBarTheme"
+        app:titleTextColor="#FF0000"
+        app:titleTextAppearance="@style/ToolbarTitle"
+        app:subtitleTextColor="@color/black"
+        app:subtitleTextAppearance="@style/ToolbarSubTitle" />
 
     <ScrollView
         android:id="@+id/home_fragment_scrollview"

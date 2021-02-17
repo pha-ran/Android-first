@@ -23,7 +23,6 @@
         android:layout_alignParentBottom="true"
         app:menu="@menu/bottom_navigation_menu"
         app:labelVisibilityMode="unlabeled"
-        android:background="@color/black"
         app:itemIconTint="@drawable/bottom_navigation_item_color"/>
 
 </RelativeLayout>
