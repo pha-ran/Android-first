@@ -27,7 +27,7 @@
         android:icon="@drawable/ic_bottom_navigation_board"/>
 
     <item
-        android:id="@+id/bottom_navigation_item_notify"
+        android:id="@+id/bottom_navigation_item_notice"
         app:showAsAction="always"
         android:enabled="true"
         android:title="알림"
