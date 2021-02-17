@@ -1,6 +1,7 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Theme.Clone_EveryTime" parent="Theme.MaterialComponents.DayNight.NoActionBar"> <!-- 액션바 감추기 -->
+    <style name="Theme.Clone_EveryTime" parent="Theme.MaterialComponents.Light.NoActionBar">
+                                        <!-- Light 모드 사용(DayNight 모드 사용시 휴대폰 설정에 따라 모드 변경), 기본 액션바 감추기 -->
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/purple_500</item>
         <item name="colorPrimaryVariant">@color/purple_700</item>

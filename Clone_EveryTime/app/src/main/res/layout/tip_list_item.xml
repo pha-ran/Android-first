@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="300dp"
+    android:layout_height="180dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:layout_margin="4dp"
+        android:background="@drawable/gray_edge">
+
+        <ImageView
+            android:id="@+id/tip_list_item_imageView"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginLeft="24dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginVertical="40dp"
+            android:src="@drawable/ic_bottom_navigation_bell" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="8dp"
+            android:layout_marginVertical="32dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tip_list_item_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="TextView"
+                android:textSize="18sp"/>
+
+            <TextView
+                android:id="@+id/tip_list_item_subtitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="TextView"
+                android:textSize="12dp"/>
+
+            <Button
+                android:id="@+id/tip_list_item_button"
+                android:layout_width="36dp"
+                android:layout_height="30dp"
+                android:layout_marginVertical="4dp"/>
+
+        </LinearLayout>
+    </LinearLayout>
+
+</FrameLayout>
