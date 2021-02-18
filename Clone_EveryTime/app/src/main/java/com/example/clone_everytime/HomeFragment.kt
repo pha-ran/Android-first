@@ -3,6 +3,7 @@ package com.example.clone_everytime
 import android.os.Build
 import android.os.Bundle
 import android.view.*
+import android.widget.FrameLayout
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.annotation.RequiresApi
@@ -28,7 +29,9 @@ class HomeFragment : Fragment() {
         mainactivity = activity as MainActivity
         setHasOptionsMenu(true) //프래그먼트에서 툴바 메뉴를 설정
 
-        //리사이클러뷰 설정
+        setToolBar("에브리타임","한국항공대")
+
+        //팁 리스트(리사이클러뷰) 설정
         val tip_list_recyclerview = homefragment?.findViewById<RecyclerView>(R.id.tip_list_recyclerview)
         val tip_list_adapter = tip_list_adapter(tip_list_item_datalist, mainactivity)
         val layoutmanager = LinearLayoutManager(mainactivity)
@@ -42,7 +45,8 @@ class HomeFragment : Fragment() {
         tip_list_item_datalist.add(tip_list_item_data("과목별 담은인원 확인하기", "수강신청 때 뭐가 경쟁률이 높을까?"))
         tip_list_item_datalist.add(tip_list_item_data("원하는 시간의 과목 검색", "월3, 4에 한 개만 더 채우면 딱인데.."))
 
-        setToolBar("에브리타임","한국항공대")
+        //광고 배너(프레임 레이아웃) 설정
+        homefragment?.findViewById<FrameLayout>(R.id.home_fragment_ad_framelayout)?.clipToOutline = true //테두리 모양으로 자르기
 
         return homefragment
     }
