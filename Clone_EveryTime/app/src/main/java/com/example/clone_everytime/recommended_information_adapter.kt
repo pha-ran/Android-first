@@ -27,7 +27,7 @@ class recommended_information_adapter(
         var type = itemview.findViewById<TextView>(R.id.recommended_information_item_type)
         var title = itemview.findViewById<TextView>(R.id.recommended_information_item_title)
         var subtitle = itemview.findViewById<TextView>(R.id.recommended_information_item_subtitle)
-        var btn_text = itemview.findViewById<Button>(R.id.recommended_information_item_button)
+        var btn_text = itemview.findViewById<TextView>(R.id.recommended_information_item_button)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): recommended_information_viewholder {

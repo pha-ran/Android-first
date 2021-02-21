@@ -1,11 +1,14 @@
 package com.example.clone_everytime
 
+import android.os.Build
 import android.os.Bundle
 import android.view.*
 import android.widget.FrameLayout
 import android.widget.Toast
+import androidx.annotation.RequiresApi
 import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.PagerSnapHelper
 import androidx.recyclerview.widget.RecyclerView
@@ -17,7 +20,9 @@ class HomeFragment : Fragment() {
     lateinit var mainactivity : MainActivity
     var tip_list_item_datalist = ArrayList<tip_list_item_data>()
     var recommended_information_datalist = ArrayList<recommended_information_data>()
+    var popular_posts_datalist = ArrayList<popular_posts_data>()
 
+    @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
     override fun onCreateView(
             inflater: LayoutInflater, container: ViewGroup?,
             savedInstanceState: Bundle?,
@@ -45,6 +50,16 @@ class HomeFragment : Fragment() {
         //광고 배너(프레임 레이아웃) 설정
         homefragment?.findViewById<FrameLayout>(R.id.home_fragment_ad_framelayout)?.clipToOutline = true //테두리 모양으로 자르기
 
+        //실시간 인기 글(리사이클러뷰) 설정
+        val popular_posts_recyclerview = homefragment?.findViewById<RecyclerView>(R.id.popular_posts_recyclerview)
+        val popular_posts_adapter =  popular_posts_adapter(popular_posts_datalist, mainactivity)
+        val popular_posts_layoutmanager = GridLayoutManager(mainactivity,2)
+        popular_posts_layoutmanager.orientation = LinearLayoutManager.HORIZONTAL
+        popular_posts_recyclerview?.layoutManager = popular_posts_layoutmanager
+        popular_posts_recyclerview?.adapter = popular_posts_adapter
+        popular_posts_datalist.add(popular_posts_data(R.drawable.ic_home_fragment_calender, "익명1", "2021-02-20", "aaaaaaaaaaaaaaaaaaaaaaaaaaaaa", "자유 게시판", 2, 0))
+        popular_posts_datalist.add(popular_posts_data(R.drawable.ic_home_fragment_home, "익명2", "2021-02-21", "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb", "비밀 게시판", 0, 2))
+
         //추천 정보(리사이클러뷰) 설정
         val recommended_information_recyclerview = homefragment?.findViewById<RecyclerView>(R.id.recommended_information_recyclerview)
         val recommended_information_adapter = recommended_information_adapter(recommended_information_datalist, mainactivity)
@@ -54,6 +69,7 @@ class HomeFragment : Fragment() {
         recommended_information_recyclerview?.layoutManager = recommended_information_layoutmanager
         recommended_information_recyclerview?.adapter = recommended_information_adapter
         recommended_information_snaphelper.attachToRecyclerView(recommended_information_recyclerview)
+        recommended_information_recyclerview?.addItemDecoration(CirclePagerIndicatorDecoration()) //인디케이터 추가
         recommended_information_datalist.add(recommended_information_data("삼성전자", "AD", "완벽한 새학기를 위한...", "대학생을 위한...", "추천템 보러가기"))
         recommended_information_datalist.add(recommended_information_data("소니 코리아", "AD", "오늘 방송 한마디도...", "나를 위한...", "소니 스토어"))
 
