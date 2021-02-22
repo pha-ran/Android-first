@@ -44,6 +44,14 @@ class HomeFragment : Fragment() {
         tip_list_recyclerview?.layoutManager = tip_list_layoutmanager
         tip_list_recyclerview?.adapter = tip_list_adapter
         tip_list_snaphelper.attachToRecyclerView(tip_list_recyclerview) //PagerSnapHelper 적용
+        //클릭 이벤트 설정
+        tip_list_adapter.setTipListItemClickListener(object : tip_list_adapter.OnTipListItemClickListener{
+            override fun onTipListItemClick(view: View, position: Int) {
+                val item = tip_list_item_datalist[position]
+                Toast.makeText(view.context, "클릭 : ${item.title}", Toast.LENGTH_SHORT).show()
+            }
+
+        })
         tip_list_item_datalist.add(tip_list_item_data(R.drawable.ic_tip_list_checkbox,"오늘의 할일", "2월 18일 (목)", Color.BLUE, "전체 보기"))
         tip_list_item_datalist.add(tip_list_item_data(R.drawable.ic_tip_list_checkbox,"과목별 담은인원 확인하기", "수강신청 때 뭐가 경쟁률이 높을까?", Color.GREEN, "확인하기"))
         tip_list_item_datalist.add(tip_list_item_data(R.drawable.ic_tip_list_calander,"원하는 시간의 과목 검색", "월3, 4에 한 개만 더 채우면 딱인데..", Color.YELLOW, "확인하기"))

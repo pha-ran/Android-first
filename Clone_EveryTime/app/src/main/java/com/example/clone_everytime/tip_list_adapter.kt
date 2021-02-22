@@ -1,7 +1,6 @@
 package com.example.clone_everytime
 
 import android.content.Context
-import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -20,6 +19,16 @@ class tip_list_item_data(
 
 class tip_list_adapter(val tip_list_item_datalist : ArrayList<tip_list_item_data>, val context : Context)
     : RecyclerView.Adapter<tip_list_adapter.tip_list_viewholder>(){
+
+    interface OnTipListItemClickListener {
+        fun onTipListItemClick(view: View, position: Int)
+    }
+
+    private lateinit var ontiplistitemclicklistener : OnTipListItemClickListener
+
+    fun setTipListItemClickListener(tiplistitemclicklistener : OnTipListItemClickListener) {
+        this.ontiplistitemclicklistener = tiplistitemclicklistener
+    }
 
     inner class tip_list_viewholder(itemview : View)
         : RecyclerView.ViewHolder(itemview) {
@@ -42,6 +51,10 @@ class tip_list_adapter(val tip_list_item_datalist : ArrayList<tip_list_item_data
         holder.subtitle.text = tip_list_item_datalist[position].subtitle
         holder.subtitle.setTextColor(tip_list_item_datalist[position].subtltle_color)
         holder.button.text = tip_list_item_datalist[position].button
+
+        holder.itemView.setOnClickListener {
+            ontiplistitemclicklistener.onTipListItemClick(it, position)
+        }
     }
 
     override fun getItemCount(): Int {
