@@ -66,7 +66,7 @@
             android:id="@+id/imageView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:srcCompat="@drawable/ic_home_fragment_home"
+            app:srcCompat="@drawable/ic_popular_posts_like"
             android:layout_marginHorizontal="4dp" />
 
         <TextView
@@ -81,7 +81,7 @@
             android:id="@+id/imageView3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:srcCompat="@drawable/ic_home_fragment_speaker"
+            app:srcCompat="@drawable/ic_popular_posts_comment"
             android:layout_marginHorizontal="4dp" />
 
         <TextView

@@ -1,5 +1,6 @@
 package com.example.clone_everytime
 
+import android.graphics.Color
 import android.os.Build
 import android.os.Bundle
 import android.view.*
@@ -43,9 +44,9 @@ class HomeFragment : Fragment() {
         tip_list_recyclerview?.layoutManager = tip_list_layoutmanager
         tip_list_recyclerview?.adapter = tip_list_adapter
         tip_list_snaphelper.attachToRecyclerView(tip_list_recyclerview) //PagerSnapHelper 적용
-        tip_list_item_datalist.add(tip_list_item_data("오늘의 할일", "2월 18일 (목)"))
-        tip_list_item_datalist.add(tip_list_item_data("과목별 담은인원 확인하기", "수강신청 때 뭐가 경쟁률이 높을까?"))
-        tip_list_item_datalist.add(tip_list_item_data("원하는 시간의 과목 검색", "월3, 4에 한 개만 더 채우면 딱인데.."))
+        tip_list_item_datalist.add(tip_list_item_data(R.drawable.ic_tip_list_checkbox,"오늘의 할일", "2월 18일 (목)", Color.BLUE, "전체 보기"))
+        tip_list_item_datalist.add(tip_list_item_data(R.drawable.ic_tip_list_checkbox,"과목별 담은인원 확인하기", "수강신청 때 뭐가 경쟁률이 높을까?", Color.GREEN, "확인하기"))
+        tip_list_item_datalist.add(tip_list_item_data(R.drawable.ic_tip_list_calander,"원하는 시간의 과목 검색", "월3, 4에 한 개만 더 채우면 딱인데..", Color.YELLOW, "확인하기"))
 
         //광고 배너(프레임 레이아웃) 설정
         homefragment?.findViewById<FrameLayout>(R.id.home_fragment_ad_framelayout)?.clipToOutline = true //테두리 모양으로 자르기
@@ -70,8 +71,8 @@ class HomeFragment : Fragment() {
         recommended_information_recyclerview?.adapter = recommended_information_adapter
         recommended_information_snaphelper.attachToRecyclerView(recommended_information_recyclerview)
         recommended_information_recyclerview?.addItemDecoration(CirclePagerIndicatorDecoration()) //인디케이터 추가
-        recommended_information_datalist.add(recommended_information_data("삼성전자", "AD", "완벽한 새학기를 위한...", "대학생을 위한...", "추천템 보러가기"))
-        recommended_information_datalist.add(recommended_information_data("소니 코리아", "AD", "오늘 방송 한마디도...", "나를 위한...", "소니 스토어"))
+        recommended_information_datalist.add(recommended_information_data(R.drawable.ic_tip_list_checkbox, "삼성전자", "AD", R.drawable.ad_seed_pink, "완벽한 새학기를 위한...", "대학생을 위한...", "추천템 보러가기"))
+        recommended_information_datalist.add(recommended_information_data(R.drawable.ic_tip_list_calander, "소니 코리아", "AD", R.drawable.ad_seed_pink, "오늘 방송 한마디도...", "나를 위한...", "소니 스토어"))
 
         return homefragment
     }
