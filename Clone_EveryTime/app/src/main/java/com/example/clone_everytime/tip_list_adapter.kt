@@ -24,7 +24,7 @@ class tip_list_adapter(val tip_list_item_datalist : ArrayList<tip_list_item_data
         fun onTipListItemClick(view: View, position: Int)
     }
 
-    private lateinit var ontiplistitemclicklistener : OnTipListItemClickListener
+    lateinit var ontiplistitemclicklistener : OnTipListItemClickListener
 
     fun setTipListItemClickListener(tiplistitemclicklistener : OnTipListItemClickListener) {
         this.ontiplistitemclicklistener = tiplistitemclicklistener
@@ -53,6 +53,11 @@ class tip_list_adapter(val tip_list_item_datalist : ArrayList<tip_list_item_data
         holder.button.text = tip_list_item_datalist[position].button
 
         holder.itemView.setOnClickListener {
+            ontiplistitemclicklistener.onTipListItemClick(it, position)
+        }
+
+        //아이템 안의 버튼 클릭 이벤트 구현 (이 앱에서는 아이템 클릭 이벤트와 동일)
+        holder.button.setOnClickListener {
             ontiplistitemclicklistener.onTipListItemClick(it, position)
         }
     }
