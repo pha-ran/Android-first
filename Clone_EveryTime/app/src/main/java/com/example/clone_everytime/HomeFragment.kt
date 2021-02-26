@@ -1,5 +1,6 @@
 package com.example.clone_everytime
 
+import android.content.Intent
 import android.graphics.Color
 import android.os.Build
 import android.os.Bundle
@@ -100,8 +101,10 @@ class HomeFragment : Fragment() {
         when (item.itemId) {
             R.id.toolbar_home_search ->
                 Toast.makeText(mainactivity, "검색 버튼 클릭", Toast.LENGTH_SHORT).show() //테스트
-            R.id.toolbar_home_myprofile ->
-                Toast.makeText(mainactivity, "내 프로필 버튼 클릭", Toast.LENGTH_SHORT).show() //테스트
+            R.id.toolbar_home_myinfo -> {
+                val intent = Intent(mainactivity, MyInfoActivity::class.java)
+                startActivity(intent)
+            }
         }
         return super.onOptionsItemSelected(item)
     }

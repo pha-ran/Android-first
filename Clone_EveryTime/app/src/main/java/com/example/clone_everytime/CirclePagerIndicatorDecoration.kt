@@ -68,6 +68,8 @@ class CirclePagerIndicatorDecoration : ItemDecoration() {
         val width: Int = activeChild.width
         val right: Int = activeChild.right
 
+        println("$left, $width, $right")
+
         // on swipe the active item will be positioned from [-width, 0]
         // interpolate offset for smooth animation
         val progress: Float = mInterpolator.getInterpolation(left * -1 / width.toFloat())

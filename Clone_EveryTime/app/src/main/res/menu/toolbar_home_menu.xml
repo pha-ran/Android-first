@@ -9,7 +9,7 @@
         android:title="검색"
         app:showAsAction="always"/>
 
-    <item android:id="@+id/toolbar_home_myprofile"
+    <item android:id="@+id/toolbar_home_myinfo"
         android:icon="@drawable/ic_home_toolbar_person"
         android:title="내정보"
         app:showAsAction="always"/>
