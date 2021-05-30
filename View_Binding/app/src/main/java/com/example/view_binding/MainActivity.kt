@@ -12,6 +12,6 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.textView.text = "view binding"
+        binding.textView.text = "ActivityMainBinding"
     }
 }
